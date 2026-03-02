@@ -1,206 +1,164 @@
-/* ===== PARTNER A: CSS VARIABLES & RESETS ===== */
-:root {
-    --primary-color: #ff6b35;     /* Burger orange */
-    --secondary-color: #fbb13c;    /* Mustard yellow */
-    --dark-color: #2e1b0f;         /* Bun brown */
-    --light-color: #fff3e0;        /* Cream */
-    --accent-color: #4caf50;       /* Lettuce green */
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
-/* Fluid Images - Requirement #4 */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+} 
+
+/* Header / Hero */
+header { 
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 80px 0;
 }
 
-/* ===== PARTNER A: HEADER STYLES ===== */
-.header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-.navbar {
-    display: flex;  /* Requirement #1 - Flexbox */
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.intro h1 {
+    font-size: 2.5rem;
 }
 
-.nav-menu {
-    display: none; /* Hidden on mobile */
-    list-style: none;
-    gap: 2rem;
+.intro h1 span {
+    color: #ffd700;
 }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
+.intro p {
+    margin-top: 20px;
     font-size: 1.1rem;
-    transition: color 0.3s;
 }
 
-.nav-menu a:hover {
-    color: var(--dark-color);
-}
-
-/* Hamburger menu - Bonus Feature */
-.hamburger {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.hero {
+.hero-images {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
+}
+
+.hero-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+/* Skills */
+.skills-section {
+  background-color: #0F172A;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.skills-section h2 {
+  color: #F8FAFC;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.skill {
+  background-color: #1E293B;
+  padding: 20px;
+  border-radius: 14px;
+  font-weight: bold;
+  color: #F8FAFC;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #9148DF, #5984D0);
+}
+/* Projects */
+#projects {
+    padding: 60px 0;
+}
+
+#projects h2 {
     text-align: center;
-    min-height: 80vh;
-    padding: 2rem;
+    margin-bottom: 40px;
+    color: #6a11cb;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-}
-
-.cta-button {
-    background: var(--dark-color);
-    color: white;
-    border: none;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.cta-button:hover {
-    background: var(--accent-color);
-    transform: scale(1.05);
-}
-
-/* ===== PARTNER A: MENU SECTION ===== */
-.menu {
-    padding: 4rem 1rem;
-    background: var(--light-color);
-}
-
-.menu h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.menu-grid {
-    display: grid;  /* Requirement #1 - Grid */
-    grid-template-columns: 1fr;  /* Mobile: 1 column */
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.burger-card {
-    background: white;
+.project-card {
+    background: #fff;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
 
-.burger-card:hover {
-    transform: translateY(-10px);
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-.burger-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+/* About */
+#about {
+    padding: 60px 0;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    color: #333;
 }
 
-.burger-card h3 {
-    font-size: 1.5rem;
-    margin: 1rem 1rem 0.5rem;
-    color: var(--dark-color);
+#about h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.burger-desc {
-    color: #666;
-    margin: 0 1rem 1rem;
-    font-size: 0.95rem;
+/* Contact */
+#contact {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #1f2937;
+    color: #fff;
 }
 
-.burger-card .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 0 1rem 1.5rem;
+#contact a {
+    color: #ffd700;
+    text-decoration: none;
 }
 
-/* ===== MEDIA QUERY - Requirement #3 ===== */
-@media screen and (min-width: 768px) {
-    /* Tablet Styles */
-    .hamburger {
-        display: none; /* Hide hamburger on tablet/desktop */
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1f2937;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .nav-menu {
-        display: flex !important;
-    }
+    .hero-images {
+        justify-content: center;
+        margin-top: 30px;
 
-    .hero h1 {
-        font-size: 4rem;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    /* Desktop Styles */
-    .menu-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-    }
-}
